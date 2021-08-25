@@ -11,7 +11,7 @@ st.subheader(
 Average_Prices = pd.read_csv("df_crops.csv").set_index("Produce_Variety")
 months = pd.read_csv("df_crops_per_month.csv").set_index("Month")
 product_counties = pd.read_csv("df_to_products_per_county.csv").set_index("COMMODITY")
-regions_to_plant = pd.read_csv("df_regisons.csv").set_index("CROPS")
+regions_to_plant = pd.read_csv("df_regions.csv").set_index("CROPS")
 
 
 # st.bar_chart(df)
