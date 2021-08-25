@@ -10,6 +10,10 @@ months = pd.read_csv("df_crops_per_month.csv").set_index("Month")
 product_counties = pd.read_csv("df_to_products_per_county.csv").set_index("COMMODITY")
 regions_to_plant = pd.read_csv("df_regions.csv").set_index("CROP")
 
+commodity_average_prices = pd.read_csv("df_average_prices.csv").set_index(
+    "Commodity_Type"
+)
+
 
 # st.bar_chart(df)
 
@@ -20,6 +24,7 @@ selected_status = st.sidebar.selectbox(
         "Products in counties",
         "products per Months",
         "Regions to Grow",
+        "Commodity average prices",
     ],
 )
 
@@ -46,3 +51,8 @@ if selected_status == "Regions to Grow":
         "The following crops do better in these counties as per the yields per Hactare"
     )
     st.table(regions_to_plant)
+
+if selected_status == "Commodity average prices":
+    st.title("Average prices of specifi commodities")
+    st.subheader("prices of various commodities and their volumes")
+    st.table(commodity_average_prices)
